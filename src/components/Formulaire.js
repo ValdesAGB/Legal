@@ -96,7 +96,7 @@ function Formulaire() {
         </div>
         <div className="mb-4">
           <Select className="form-select" aria-label="Default select example">
-            <option selected>Pratice Area</option>
+            <option value="0">Pratice Area</option>
             <option value="1">Criminal Law</option>
             <option value="2">International Law</option>
             <option value="3">Financial Law</option>

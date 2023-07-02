@@ -92,6 +92,7 @@ function Feedback() {
     line-height: 1;
     text-transform: capitalize;
   `
+
   return (
     <React.Fragment>
       <DivSection id="feedback">

@@ -69,29 +69,34 @@ function Experted() {
     left: 0;
     right: 0;
     bottom: 0;
-    align-items: center;
-    justify-content: center;
     background-color: rgba(216, 174, 118, 0.9);
-    opacity: 0;
     display: flex;
-    margin: 4%;
-    transition: opacity 800ms;
-
-    &:hover {
-      opacity: 1;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: transform 0.8s;
+    ${DivImage}:hover & {
+      transform: scale(0.95);
     }
   `
 
   const List = styled.ul`
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
+  `
+  const ListItems = styled.li`
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: auto;
   `
 
   const Icone = styled.i`
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: white;
-    transition: color 500ms;
 
+    transition: color 500ms;
     &:hover {
       color: black;
     }
@@ -115,20 +120,20 @@ function Experted() {
                 </Fade>
                 {separator(className)}
               </div>
-              <div className="row justify-content-center">
+              <div className="row ">
                 {expertedElements.map(({ id, cover, name, post }) => (
-                  <div className="col-12 col-md px-md-3 mb-5 my-md-0" key={id}>
+                  <div className="col-12 col-sm px-md-3 mb-5 my-md-0" key={id}>
                     <Fade bottom>
                       <DivImage className="mb-3">
                         <img src={cover} alt={id} className="w-100" />
-                        <HoverImage>
-                          <List classNames=" text-center">
+                        <HoverImage className=" ">
+                          <List classNames="text-center">
                             {Networks.map(({ id, icone }) => (
-                              <li key={id} className="mx-3">
+                              <ListItems key={id} className="">
                                 <a href="#" className="text-white">
                                   <Icone className={icone} />
                                 </a>
-                              </li>
+                              </ListItems>
                             ))}
                           </List>
                         </HoverImage>

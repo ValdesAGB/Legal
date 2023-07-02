@@ -35,14 +35,16 @@ function Footer() {
   return (
     <React.Fragment>
       <FooterFooter className="row">
-        <div className="row ">
-          <DivContent className="col-12 ">
-            <div className="row">
-              <div className="col-md-6 col-lg mb-5">{<APropos />}</div>
-              <div className="col-md-6 col-lg mb-5 mx-md-2">{<Blogs />}</div>
-              <div className="col-md-6 col-lg">{<Coordonnes />}</div>
-            </div>
-          </DivContent>
+        <div>
+          <div className="row ">
+            <DivContent className="col-12 ">
+              <div className="row">
+                <div className="col-md-6 col-lg mb-5">{<APropos />}</div>
+                <div className="col-md-6 col-lg mb-5 mx-md-2">{<Blogs />}</div>
+                <div className="col-md-6 col-lg">{<Coordonnes />}</div>
+              </div>
+            </DivContent>
+          </div>
         </div>
       </FooterFooter>
       <Corpyright className="row justify-content-center">

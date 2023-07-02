@@ -1,6 +1,7 @@
 import React from 'react'
 import { blogsPostsElements } from '../data'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 function Blogs() {
   const MainTitle = styled.h3`
@@ -15,7 +16,7 @@ function Blogs() {
   const Image = styled.img`
     border-radius: 5%;
   `
-  const Title = styled.a`
+  const Title = styled(Link)`
     color: #bdbdbd;
     font-size: 14px;
     font-weight: 400;
@@ -55,11 +56,11 @@ function Blogs() {
                 <Image src={cover} alt={id} />
               </div>
               <div className="col">
-                <Title href="#">{title}</Title>
+                <Title to="/blog">{title}</Title>
                 <div>
                   <Date>Jan 20, 2017</Date>
                   <Comments>
-                    <i class="bi bi-chat"></i> {comments} comments
+                    <i className="bi bi-chat" /> {comments} comments
                   </Comments>
                 </div>
               </div>

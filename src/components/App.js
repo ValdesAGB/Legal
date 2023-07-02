@@ -1,16 +1,12 @@
 import React from 'react'
-import Home from './Home'
 import { createGlobalStyle } from 'styled-components'
-import Counts from './Counts'
-import About from './About'
-import Pratice from './Pratice'
-import Experted from './Experted'
-import Us from './Us'
-import Feedback from './Feedback'
-import Clients from './Clients'
-import Contact from './Contact'
 import Footer from './Footer'
 import Header from './Header'
+import { Route, Routes } from 'react-router-dom'
+import Accueil from '../Pages/Accueil'
+import BlogsPages from '../Pages/Blogs'
+import ScrollToTopOnPageChange from './ScrollToTopOnPageChange'
+import NotFound from '../Pages/404'
 
 function App() {
   const GlobalStyle = createGlobalStyle`
@@ -22,16 +18,13 @@ function App() {
     <React.Fragment>
       <GlobalStyle />
       <Header />
+      <ScrollToTopOnPageChange />
       <main className="row">
-        <Home />
-        <Counts />
-        <About />
-        <Pratice />
-        <Experted />
-        <Us />
-        <Feedback />
-        <Clients />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+          <Route path="/blog" element={<BlogsPages />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
       </main>
       <Footer />
     </React.Fragment>

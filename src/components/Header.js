@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { navElements, width } from '../data'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 function Header() {
   const [top, setTop] = useState(true)
@@ -18,10 +18,20 @@ function Header() {
     }
   }, [])
 
+  const slideDownAnimation = keyframes`
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+`
+
   const Nav = styled.div`
     position: fixed;
     z-index: 5;
     background-color: ${top ? 'transparent' : 'white'};
+    animation: ${slideDownAnimation} 1s ease-in-out;
     @media (min-width: 320px) {
       padding: 2% 0% 2% 0%;
     }
@@ -44,21 +54,27 @@ function Header() {
   const List = styled.ul`
     color: white;
     position: relative;
-
-    @media (min-width: 320px) {
-      left: 0%;
-    }
-    @media (min-width: 1024px) {
+    left: 5%;
+    @media (min-width: 768px) {
       left: 2%;
     }
-    @media (min-width: ${width}px) {
-      left: 20%;
+    @media (min-width: 992px) {
+      left: 10%;
+    }
+    @media (min-width: 1200px) {
+      left: 25%;
+    }
+    @media (min-width: 1360px) {
+      left: 33%;
+    }
+    @media (min-width: 1400px) {
+      left: 45%;
     }
   `
 
   const ListItems = styled.li`
     position: relative;
-    margin-left: 5%;
+    margin-left: 2%;
     @media (min-width: 320px) {
       border-bottom: none;
       padding-bottom: 0;
@@ -68,7 +84,7 @@ function Header() {
         props.ids === 'home' ? `solid 4px ${top ? 'white' : 'black'}` : null};
       padding-bottom: 0.5%;
       position: relative;
-
+      margin-left: 1%;
       &:after {
         content: '';
         position: absolute;
@@ -89,13 +105,14 @@ function Header() {
   const Link = styled.a`
     font-size: 0.8em;
     font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
     @media (min-width: 320px) {
       color: white;
       &:active {
         color: white;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 992px) {
       color: ${top ? 'white' : 'black'};
       &:hover {
         color: ${top ? 'white' : 'black'};
@@ -109,7 +126,7 @@ function Header() {
 
   const Onglets = styled.div`
     background-color: #363636;
-    @media (min-width: 1024px) {
+    @media (min-width: 992px) {
       background-color: transparent;
     }
   `
@@ -129,7 +146,7 @@ function Header() {
       <Nav className="row w-100">
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <Link className="navbar-brand" href="/">
               {top ? (
                 <img
                   src="http://landing.zytheme.com/legal/assets/images/logo/logo-light.png"
@@ -143,7 +160,7 @@ function Header() {
                   className="w-100"
                 />
               )}
-            </a>
+            </Link>
             <Button
               className="navbar-toggler"
               data-bs-toggle="collapse"
@@ -159,17 +176,13 @@ function Header() {
               id="navbarSupportedContent"
             >
               <List className="navbar-nav w-100">
-                {navElements.map(({ id, href }) => (
+                {navElements.map(({ id, to }, index) => (
                   <ListItems
                     ids={id.includes(' ') ? id.replace(/\s/g, '-') : id}
                     className="nav-item"
                     key={id.includes(' ') ? id.replace(/\s/g, '-') : id}
                   >
-                    <Link
-                      className={`nav-link `}
-                      aria-current="page"
-                      href={href === '' ? '#' : `#${href}`}
-                    >
+                    <Link href={to} className="nav-link">
                       {id.toUpperCase()}
                     </Link>
                   </ListItems>

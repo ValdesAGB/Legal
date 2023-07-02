@@ -3,44 +3,42 @@ import styled from 'styled-components'
 export const navElements = [
   {
     id: 'home',
-
-    href: '',
+    to: '/',
   },
 
   {
     id: 'about',
-
-    href: 'about',
+    to: '/#about',
   },
 
   {
     id: 'feature',
-
-    href: 'feature',
+    to: '/#feature',
   },
 
   {
     id: 'team',
-
-    href: 'team',
+    to: '/#team',
   },
 
   {
     id: 'Why Us',
-
-    href: 'why-us',
+    to: '/#why-us',
   },
 
   {
     id: 'feedback',
-
-    href: 'feedback',
+    to: '/#feedback',
   },
 
   {
     id: 'free consultation',
+    to: '/#free-consultation',
+  },
 
-    href: 'free-consultation',
+  {
+    id: 'Blog',
+    to: '/blog',
   },
 ]
 
@@ -305,6 +303,62 @@ export const blogsPostsElements = [
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/thumb/3.jpg',
     title: 'Four ways to cheer yourself up on the Blue Monday!',
     comments: 5,
+  },
+]
+
+export const blogsPagesElements = [
+  {
+    id: '1',
+    cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/1.jpg',
+    title: '10 things to know about tax practice in usa for companies',
+  },
+
+  {
+    id: '2',
+    cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/2.jpg',
+    title: 'The incredible growing presidential legal team how to?',
+  },
+
+  {
+    id: '3',
+    cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/3.jpg',
+    title: 'So what can law firms do?19 thing you will learn',
+  },
+
+  {
+    id: '4',
+    cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/4.jpg',
+    title: '3 things law firms must understand to increase gender diversity',
+  },
+
+  {
+    id: '5',
+    cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/5.jpg',
+    title: '10 things to know about entertainment law',
+  },
+
+  {
+    id: '6',
+    cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/6.jpg',
+    title: 'What stops lawyers from using Macs at work?',
+  },
+
+  {
+    id: '7',
+    cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/7.jpg',
+    title: 'An important footnote in the history of legal education',
+  },
+
+  {
+    id: '8',
+    cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/8.jpg',
+    title: 'Lawyers as leaders: is your personality too legal?',
+  },
+
+  {
+    id: '9',
+    cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/9.jpg',
+    title: 'Never fire a potential key witness before trial',
   },
 ]
 
