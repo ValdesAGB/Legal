@@ -7,13 +7,15 @@ import Accueil from '../Pages/Accueil'
 import BlogsPages from '../Pages/Blogs'
 import ScrollToTopOnPageChange from './ScrollToTopOnPageChange'
 import NotFound from '../Pages/404'
+import { police } from '../untils/police'
+
+const GlobalStyle = createGlobalStyle`
+* {
+    font-family:${police.second}
+  }
+`
 
 function App() {
-  const GlobalStyle = createGlobalStyle`
- *{
-  font-family: 'Open Sans', sans-serif
- }
- `
   return (
     <React.Fragment>
       <GlobalStyle />

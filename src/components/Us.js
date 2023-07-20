@@ -1,123 +1,133 @@
 import React from 'react'
 import styled from 'styled-components'
-import { separator, usElements, width } from '../data'
-import law from '../assets/law.png'
+import { separator, usElements } from '../data'
+
 import { Fade } from 'react-reveal'
-function Us() {
-  const HeadTitle = styled.p`
-    font-family: 'Merriweather', serif;
-    color: #363636;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 10px;
-    text-transform: capitalize;
-    padding: 0;
-    @media (min-width: 320px) {
-      font-size: 1.7em;
-    }
-  `
+import { police } from '../untils/police'
+import { color } from '../untils/colors'
 
-  const HeadText = styled.p`
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    color: #999999;
-    line-height: 1.5em;
-    font-size: 1.2em;
-    padding: 0;
-  `
-  const Icone = styled.i`
-    color: #d8ae76;
-    @media (min-width: 320px) {
-      font-size: 2.5em;
-    }
-    @media (min-width: 375px) {
-      font-size: 3em;
-    }
-    @media (min-width: 768px) {
-      font-size: 2.5em;
-    }
-  `
-  const List = styled.div`
-    margin-top: 5%;
-  `
-  const ListItemsDiv = styled.div`
-    padding: 0;
-  `
+const separatorClassName = 'col-3 mt-3 mt-md-0 col-md-2'
+const bgCover =
+  'http://landing.zytheme.com/legal/assets/images/background/bg-1.jpg'
 
-  const Title = styled.h4`
-    font-family: 'Merriweather', serif;
-    color: #363636;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 14px;
-    text-transform: capitalize;
-  `
-  const Text = styled.p`
-    opacity: 0.6;
-    color: #777777;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 0;
-  `
-  const ContentDiv = styled.div`
-    padding: 120px 10px 90px 120px;
-    @media (min-width: 320px) {
-      padding: 10% 0 90px 20%;
-    }
-    @media (min-width: 375px) {
-      padding: 10% 0 90px 15%;
-    }
-    @media (min-width: 425px) {
-      padding: 10% 0 90px 10%;
-    }
-    @media (min-width: 1024px) {
-      padding: 120px 10px 90px 120px;
-    }
-    @media (min-width: ${width}px) {
-      padding: 120px 10px 90px 100px;
-    }
-    @media (min-width: 2560px) {
-      padding: 10% 10px 90px 100px;
-    }
-  `
+const CoverContainer = styled.div`
+  padding: 0;
+`
 
-  const Image = styled.img`
-    width: 100%;
+const Cover = styled.div`
+  background-image: url(${bgCover});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  @media (min-width: 992px) {
     height: 100%;
-  `
+  }
+`
 
+const ContentDiv = styled.div`
+  padding-top: 10%;
+  padding-bottom: 10%;
+`
+
+const HeadTitle = styled.p`
+  font-family: ${police.main};
+  color: ${color.countNumbersColor};
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  padding: 0;
+  @media (min-width: 768px) {
+    font-size: 36px;
+  }
+`
+
+const HeadText = styled.p`
+  font-family: ${police.second};
+  font-weight: 400;
+  color: ${color.aboutTextColor};
+  margin: 25px 0;
+  font-size: 14px;
+  line-height: 28px;
+
+  @media (min-width: 768px) {
+    font-size: 1.2em;
+    line-height: 28px;
+    margin-bottom: 5%;
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 2%;
+  }
+`
+
+const List = styled.div`
+  margin-top: 5%;
+`
+const ListItemsDiv = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  @media (min-width: 768px) {
+    padding: 0.5rem;
+  }
+  @media (min-width: 992px) {
+    padding-right: 1rem;
+  }
+`
+
+const Icone = styled.i`
+  color: ${color.homeBtnColor};
+  font-size: 2.5em;
+`
+
+const Title = styled.h4`
+  font-family: ${police.main};
+  color: ${color.countNumbersColor};
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 14px;
+  text-transform: capitalize;
+`
+
+const Text = styled.p`
+  opacity: 0.6;
+  color: ${color.praticeTextColor};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 0;
+`
+function Us() {
   return (
     <section>
-      <div className="row " id="why-us">
-        <div className="col-12 col-lg-5 p-0">
-          <Image src={law} alt="1" />
-        </div>
-        <ContentDiv className="col-12 col-lg  ">
-          <div className="col-12 row justify-content-start ">
+      <div className="row" id="why-us">
+        <CoverContainer className="col-sm-12 col-lg-5">
+          <Cover />
+        </CoverContainer>
+        <ContentDiv className="col-sm-12 col-lg-7 row justify-content-center">
+          <div className="col-12 col-md-9 col-lg-11">
             <Fade bottom>
               <HeadTitle>Why Hire Us ?</HeadTitle>
             </Fade>
             <Fade bottom>
-              <HeadText className="my-3">
+              <HeadText>
                 Lorem ipsum dolor amet, consectetur adipisice elite sede eiusmod
                 tempor incidide labeore dolore magna.
               </HeadText>
             </Fade>
-            {separator('col-3 mt-3 ms-lg-3 mt-md-0 col-md-2 ')}
+            {separator(separatorClassName)}
             <List className="row">
               {usElements.map(({ id, icone, title }) => (
-                <ListItemsDiv
-                  className="col-12 col-md-6 p-md-2 pe-lg-3  my-4"
-                  key={id}
-                >
+                <ListItemsDiv className="col-12 col-md-6" key={id}>
                   <Fade bottom>
                     <div className="mb-4">
                       <Icone className={icone} />
                     </div>
-                    <div className="">
+                    <div>
                       <Title>{title}</Title>
                       <Text>
                         Lorem ipsum dolor sit amet, conse adipise elit, sed

@@ -1,28 +1,31 @@
 import React from 'react'
 import { coordonnesElements } from '../data'
 import styled from 'styled-components'
+import { color } from '../untils/colors'
+import { police } from '../untils/police'
+
+const MainTitle = styled.h3`
+  color: ${color.main};
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+  font-family: ${police.main};
+`
+const Text = styled.span`
+  color: ${color.countTitleColor};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+`
+const Icone = styled.i`
+  color: ${color.homeBtnColor};
+  font-size: 19px;
+  margin-right: 2%;
+`
 
 function Coordonnes() {
-  const MainTitle = styled.h3`
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1;
-    text-transform: capitalize;
-    margin-bottom: 40px;
-    font-family: 'Merriweather', serif;
-  `
-  const Text = styled.div`
-    color: #bdbdbd;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-  `
-  const Icone = styled.i`
-    color: #d8ae76;
-    font-size: 19px;
-    margin-right: 2%;
-  `
   return (
     <React.Fragment>
       <div>

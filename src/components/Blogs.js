@@ -2,57 +2,69 @@ import React from 'react'
 import { blogsPostsElements } from '../data'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { color } from '../untils/colors'
+import { police } from '../untils/police'
+
+const MainTitle = styled.h3`
+  color: ${color.main};
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+  font-family: ${police.main};
+`
+
+const Title = styled(Link)`
+  color: ${color.countTitleColor};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  text-decoration: none;
+  transition: color 500ms;
+  &:hover {
+    color: ${color.homeBtnColor};
+  }
+`
+
+const Date = styled.span`
+  color: ${color.footerIconeColor};
+  font-family: ${police.main};
+  font-size: 10px;
+  line-height: 1;
+  margin-right: 3%;
+`
+
+const Comments = styled.span`
+  color: ${color.footerIconeColor};
+  font-family: ${police.main};
+  font-size: 10px;
+  line-height: 1;
+`
+
+const Content = styled.div`
+  margin-bottom: 1rem;
+  @media (min-width: 992px) {
+    margin-bottom: 0.75rem;
+  }
+`
+
+const Image = styled.img`
+  border-radius: 5%;
+`
 
 function Blogs() {
-  const MainTitle = styled.h3`
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1;
-    text-transform: capitalize;
-    margin-bottom: 40px;
-    font-family: 'Merriweather', serif;
-  `
-  const Image = styled.img`
-    border-radius: 5%;
-  `
-  const Title = styled(Link)`
-    color: #bdbdbd;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-    text-decoration: none;
-    transition: color 500ms;
-    &:hover {
-      color: #d8ae76;
-    }
-  `
-
-  const Date = styled.span`
-    color: #888888;
-    font-family: 'Merriweather', serif;
-    font-size: 10px;
-    line-height: 1;
-    margin-right: 3%;
-  `
-
-  const Comments = styled.span`
-    color: #888888;
-    font-family: 'Merriweather', serif;
-    font-size: 10px;
-    line-height: 1;
-  `
   return (
     <React.Fragment>
       <div>
         <MainTitle>Blog Posts</MainTitle>
         <div>
           {blogsPostsElements.map(({ id, cover, title, comments }) => (
-            <div
+            <Content
               key={id}
-              className="row align-items-center align-items-lg-start mb-4 mb-lg-3"
+              className="row align-items-center align-items-lg-start"
             >
-              <div className="col-4 col-md-3">
+              <div className="col-4 col-sm-2  col-md-3">
                 <Image src={cover} alt={id} />
               </div>
               <div className="col">
@@ -64,7 +76,7 @@ function Blogs() {
                   </Comments>
                 </div>
               </div>
-            </div>
+            </Content>
           ))}
           <div></div>
         </div>

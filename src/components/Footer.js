@@ -3,53 +3,89 @@ import Blogs from './Blogs'
 import Coordonnes from './Coordonnes'
 import styled from 'styled-components'
 import APropos from './APropos'
+import { color } from '../untils/colors'
+import { police } from '../untils/police'
+
+const FooterFooter = styled.footer`
+  background-color: ${color.countNumbersColor};
+  color: ${color.main};
+  padding: 20% 0;
+  @media (min-width: 768px) {
+    padding: 10% 0;
+  }
+  @media (min-width: 1400px) {
+    padding: 5% 0;
+  }
+`
+const AProposContainer = styled.div`
+  margin-bottom: 20%;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
+`
+const BlogsContainer = styled.div`
+  margin-bottom: 20%;
+  @media (min-width: 768px) {
+    margin-bottom: 10%;
+  }
+  @media (min-width: 992px) {
+    margin-bottom: 0;
+  }
+`
+const Copyright = styled.div`
+  background-color: ${color.copyrightBgColor};
+  color: ${color.footerIconeColor};
+  font-family: ${police.second};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: capitalize;
+`
+
+const CopyrightContent = styled.p`
+  padding-top: 2%;
+  padding-bottom: 1%;
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    color: ${color.footerIconeColor};
+    transition: all 500ms;
+    &:hover {
+      transform: scale(0.9);
+      color: ${color.homeBtnColor};
+    }
+  }
+`
+const date = new Date()
 
 function Footer() {
-  const FooterFooter = styled.footer`
-    background-color: #363636;
-    color: #ffffff;
-    padding: 10% 2% 5% 5%;
-    @media (min-width: 2560px) {
-      padding: 5% 2% 2% 5%;
-    }
-  `
-
-  const Corpyright = styled.div`
-    background-color: #272727;
-    padding: 33px 0;
-    color: #888888;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    text-transform: capitalize;
-  `
-
-  const DivContent = styled.div`
-    @media (min-width: 2560px) {
-      padding-left: 20%;
-      padding-right: 20%;
-    }
-  `
-  const date = new Date()
   return (
     <React.Fragment>
       <FooterFooter className="row">
         <div>
-          <div className="row ">
-            <DivContent className="col-12 ">
-              <div className="row">
-                <div className="col-md-6 col-lg mb-5">{<APropos />}</div>
-                <div className="col-md-6 col-lg mb-5 mx-md-2">{<Blogs />}</div>
-                <div className="col-md-6 col-lg">{<Coordonnes />}</div>
-              </div>
-            </DivContent>
+          <div className="container">
+            <div className="row">
+              <AProposContainer className="col-md-6 col-lg">
+                {<APropos />}
+              </AProposContainer>
+              <BlogsContainer className="col-md-6 col-lg">
+                {<Blogs />}
+              </BlogsContainer>
+              <div className="col-md-6 col-lg">{<Coordonnes />}</div>
+            </div>
           </div>
         </div>
       </FooterFooter>
-      <Corpyright className="row justify-content-center">
-        &copy; {date.getFullYear()}, All Rights Reserved.
-      </Corpyright>
+      <Copyright className="row">
+        <CopyrightContent className="text-center">
+          &copy; {date.getFullYear()},{' '}
+          <a href="https://webgrowth.valdesagbokoni.com/" target="_blank">
+            @WebGrowth
+          </a>{' '}
+          All Rights Reserved.
+        </CopyrightContent>
+      </Copyright>
     </React.Fragment>
   )
 }

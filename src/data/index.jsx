@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const icone = {
+  light: 'http://landing.zytheme.com/legal/assets/images/logo/logo-light.png',
+  dark: 'http://landing.zytheme.com/legal/assets/images/logo/logo-dark.png',
+}
+
 export const navElements = [
   {
     id: 'home',
