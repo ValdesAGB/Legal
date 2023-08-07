@@ -43,7 +43,7 @@ const Icone = styled.i`
 const Onglets = styled.div`
   background-color: ${color.countNumbersColor};
   margin-top: 10px;
-  @media (min-width: 992px) {
+  @media (min-width: 1200px) {
     margin-top: 0;
     background-color: transparent;
   }
@@ -120,7 +120,7 @@ function Header() {
       color: ${color.homeBtnColor};
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 1200px) {
       color: ${top ? 'white' : 'black'};
       &:hover {
         color: ${color.homeBtnColor};
@@ -137,7 +137,7 @@ function Header() {
       <Section className="row">
         <BeforeContainer>
           <Container className="container">
-            <nav className="navbar navbar-expand-lg">
+            <nav className="navbar navbar-expand-xl">
               <div className="container-fluid">
                 <a className="navbar-brand" href="/">
                   <Logo src={top ? icone.light : icone.dark} alt="logo" />
@@ -156,7 +156,7 @@ function Header() {
                   className="collapse navbar-collapse row justify-content-end"
                   id="navbar"
                 >
-                  <List className="navbar-nav col-lg-11 col-xl-9 col-xxl-8">
+                  <List className="navbar-nav col-xl-11 col-xxl-9 justify-content-end">
                     {navElements.map(({ id, to }) => (
                       <ListItems
                         ids={formatId(id)}

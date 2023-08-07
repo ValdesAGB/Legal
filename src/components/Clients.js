@@ -15,53 +15,67 @@ const settings = {
   arrows: false,
   responsive: [
     {
-      breakpoint: 767,
+      breakpoint: 575,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
       },
     },
+
     {
-      breakpoint: 991,
+      breakpoint: 992,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 1199,
+      breakpoint: 1200,
       settings: {
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 2,
       },
     },
   ],
 }
 
-const DivSection = styled.section`
-  padding: 2% 0;
+const ClientsSection = styled.section`
+  padding: 15px 0 10px;
   background-color: ${color.homeBtnColor};
 `
 
+const CoverContainer = styled.div`
+  padding: 0 100px;
+
+  @media (min-width: 576px) {
+    padding: 0 50px;
+  }
+  @media (min-width: 1200px) {
+    padding: 0;
+  }
+`
+
 const Cover = styled.img`
-  width: 100%;
   cursor: pointer;
+  width: 100%;
 `
 
 function Clients() {
   return (
     <React.Fragment>
-      <DivSection>
+      <ClientsSection>
         <div className="container">
           <div className="row " id="free-consultation">
             <Slider {...settings}>
               {clientsElements.map(({ id, cover, name }) => (
-                <Cover src={cover} alt={name} key={id} />
+                <CoverContainer>
+                  <Cover src={cover} alt={name} key={id} />
+                </CoverContainer>
               ))}
             </Slider>
           </div>
         </div>
-      </DivSection>
+      </ClientsSection>
     </React.Fragment>
   )
 }

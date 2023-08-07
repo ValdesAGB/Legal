@@ -7,39 +7,48 @@ import { police } from '../untils/police'
 
 const AboutSection = styled.section`
   background-color: ${color.aboutBgColor};
-  padding-top: 100%;
+  padding-top: 300px;
 
   @media (min-width: 768px) {
-    padding-top: 40%;
+    padding-top: 200px;
   }
 
   @media (min-width: 992px) {
-    padding-top: 20%;
-  }
-
-  @media (min-width: 1200px) {
-    padding-top: 15%;
+    padding-top: 150px;
   }
 `
+const CoverContainer = styled.div`
+  padding: 0;
+`
+
+const Cover = styled.img`
+  width: 100%;
+`
+
+const ContentContainer = styled.div`
+  padding: 0;
+  margin-top: 50px;
+`
+
 const Title = styled.h1`
   font-family: ${police.main};
   color: ${color.countNumbersColor};
   font-weight: 400;
-  line-height: 1;
   margin-bottom: 0;
   text-transform: capitalize;
   padding-bottom: 0;
-  font-size: 1.7em;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 `
-const separatorClassName = 'col-3 col-md-1 my-5'
+const separatorClassName = 'col-3 col-md-2 col-lg-5 col-xl-4'
 
 const Text = styled.p`
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
-  margin-bottom: 20px;
   color: ${color.aboutTextColor};
   font-family: ${police.second};
+  margin-top: ${(props) => props.id === '1' && '30px'};
 `
 
 const cover = 'http://landing.zytheme.com/legal/assets/images/team/team-4.png'
@@ -53,16 +62,16 @@ function About() {
       <AboutSection id="about">
         <div className="container">
           <div className="row justify-content-center align-items-center">
-            <div className="col-12 col-md-8 col-lg-5 mb-3 mb-lg-0">
-              <img src={cover} alt="cover" className="w-100" />
-            </div>
-            <div className="col-12 col-lg my-5 my-lg-0 offset-lg-1 p-0">
+            <CoverContainer className="col-12 col-sm-8 col-lg-5">
+              <Cover src={cover} alt="cover" />
+            </CoverContainer>
+            <ContentContainer className="col-12 col-lg offset-lg-1">
               <Fade bottom>
-                <Title>About Our Firm</Title>
+                <Title>À propos de notre cabinet</Title>
               </Fade>
               {separator(separatorClassName)}
               <Fade bottom>
-                <Text>
+                <Text id="1">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sede
                   do eiusmod tempor incididunt ut labore dolore magna aliqa Ut
                   enim ad minim veniam, quis nostrud exercitation.
@@ -83,7 +92,7 @@ function About() {
                   </Fade>
                 </div>
               </div>
-            </div>
+            </ContentContainer>
           </div>
         </div>
       </AboutSection>

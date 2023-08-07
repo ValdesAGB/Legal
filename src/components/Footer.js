@@ -43,16 +43,17 @@ const Copyright = styled.div`
 `
 
 const CopyrightContent = styled.p`
-  padding-top: 2%;
-  padding-bottom: 1%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
   a {
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
     color: ${color.footerIconeColor};
-    transition: all 500ms;
+    transition: color 0.5s, transform 0.5s 0.2s;
     &:hover {
-      transform: scale(0.9);
+      transform: scale(0.95);
       color: ${color.homeBtnColor};
     }
   }
@@ -81,7 +82,7 @@ function Footer() {
         <CopyrightContent className="text-center">
           &copy; {date.getFullYear()},{' '}
           <a href="https://webgrowth.valdesagbokoni.com/" target="_blank">
-            @WebGrowth
+            WebGrowth
           </a>{' '}
           All Rights Reserved.
         </CopyrightContent>

@@ -32,14 +32,11 @@ const settings = {
   ],
 }
 
-const separatorClassName = 'col-2 mb-5'
+const separatorClassName = 'col-2'
 
-const DivSection = styled.section`
+const FeedbackSection = styled.section`
   background-color: ${color.aboutBgColor};
-  padding: 20% 0;
-  @media (min-width: 768px) {
-    padding: 10% 0;
-  }
+  padding: 100px 0;
 `
 
 const HeadContainer = styled.div`
@@ -51,8 +48,7 @@ const HeadTitle = styled.h2`
   color: ${color.countNumbersColor};
   font-size: 30px;
   font-weight: 400;
-  line-height: 1;
-  text-transform: capitalize;
+  text-align: center;
   @media (min-width: 768px) {
     font-size: 36px;
   }
@@ -62,22 +58,17 @@ const HeadText = styled.p`
   font-family: ${police.second};
   font-weight: 400;
   color: ${color.aboutTextColor};
-  margin: 25px 0;
+  margin: 5px 0 25px;
   font-size: 14px;
   line-height: 28px;
-
+  text-align: center;
   @media (min-width: 768px) {
     font-size: 1.2em;
-    line-height: 28px;
-    margin-bottom: 5%;
-  }
-
-  @media (min-width: 1200px) {
-    margin-bottom: 2%;
   }
 `
 
 const ContentContainer = styled.div`
+  margin-top: 50px;
   text-align: center;
   cursor: grab;
   cursor: -moz-grab;
@@ -90,11 +81,11 @@ const ContentContainer = styled.div`
 `
 
 const SliderContent = styled.div`
-  padding: 0 5%;
+  padding: 0 15px;
 `
 
 const Cover = styled.img`
-  margin: auto auto 1rem auto;
+  margin: auto auto 10px auto;
 `
 
 const Paragraph = styled.p`
@@ -120,12 +111,12 @@ const Name = styled.h6`
 function Feedback() {
   return (
     <React.Fragment>
-      <DivSection id="feedback">
+      <FeedbackSection id="feedback">
         <div className="container">
           <div className="row justify-content-center">
-            <HeadContainer className="col-12 col-lg-6 row justify-content-center ">
+            <HeadContainer className="col-12 col-lg-6 row justify-content-center">
               <Fade bottom>
-                <HeadTitle>Clients Feedback</HeadTitle>
+                <HeadTitle>Feedback Clients</HeadTitle>
                 <HeadText>
                   Lorem ipsum dolor amet, consectetur adipisice elite sede
                   eiusmod tempor incidide labeore dolore magna.
@@ -151,7 +142,7 @@ function Feedback() {
             </ContentContainer>
           </div>
         </div>
-      </DivSection>
+      </FeedbackSection>
     </React.Fragment>
   )
 }

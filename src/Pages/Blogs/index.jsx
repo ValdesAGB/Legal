@@ -16,10 +16,16 @@ const DivHeader = styled.div`
   position: relative;
   text-align: center;
   color: white;
-  padding: 50% 0 30% 0;
+  padding: 150px 0 100px;
+
   @media (min-width: 768px) {
-    padding: 15% 0;
+    padding: 150px 0;
   }
+
+  @media (min-width: 1200px) {
+    padding: 200px 0 150px;
+  }
+
   .title {
     margin-bottom: 22px;
     font-family: ${police.main};
@@ -52,7 +58,7 @@ const DivContent = styled.div`
   z-index: 2;
 `
 
-const DivHover = styled.div`
+const Hover = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -62,9 +68,9 @@ const DivHover = styled.div`
 `
 
 const BlogsElements = styled.div`
+  background-color: ${color.aboutBgColor};
   padding-top: 10%;
   padding-bottom: 10%;
-  background-color: ${color.aboutBgColor};
   @media (min-width: 768px) {
     padding-top: 5%;
     padding-bottom: 5%;
@@ -196,7 +202,7 @@ function BlogsPages() {
               / <span>Blog Standard</span>
             </h5>
           </DivContent>
-          <DivHover></DivHover>
+          <Hover />
         </DivHeader>
 
         <BlogsElements className="row">

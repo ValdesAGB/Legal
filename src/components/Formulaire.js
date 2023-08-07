@@ -5,7 +5,7 @@ import { police } from '../untils/police'
 
 const Form = styled.form`
   color: ${color.aboutTextColor};
-  margin-top: 5rem;
+  margin-top: 50px;
 `
 const Input = styled.input`
   color: ${color.aboutTextColor};
@@ -65,20 +65,11 @@ const Button = styled.button`
     color: white !important;
   }
 
-  padding: 5% 10%;
+  padding: 10px 15px;
   font-size: 0.9em;
 
   @media (min-width: 576px) {
-    padding: 2.5% 10%;
-    font-size: 1em;
-  }
-
-  @media (min-width: 768px) {
-    padding: 3% 10% 3% 10%;
-    font-size: 1em;
-  }
-  @media (min-width: 1400px) {
-    padding: 2% 10% 2% 10%;
+    padding: 10px 25px;
     font-size: 1em;
   }
 `
@@ -94,7 +85,7 @@ function Formulaire() {
               className="form-control"
               id="name"
               aria-describedby="emailHelp"
-              placeholder="Your Name"
+              placeholder="Votre Nom"
             />
           </div>
           <div className="col-lg">
@@ -103,32 +94,28 @@ function Formulaire() {
               className="form-control "
               id="name"
               aria-describedby="emailHelp"
-              placeholder="Your Email"
+              placeholder="Votre Mail"
             />
           </div>
         </div>
         <div className="mb-4">
           <Select className="form-select" aria-label="Default select example">
-            <option value="0">Pratice Area</option>
-            <option value="1">Criminal Law</option>
-            <option value="2">International Law</option>
-            <option value="3">Financial Law</option>
+            <option value="0">Zone Pratique</option>
+            <option value="1">Loi Criminelle</option>
+            <option value="2">Loi Internationale</option>
+            <option value="3">Droit financier</option>
           </Select>
         </div>
         <div className="mb-4">
           <TextArea
             className="form-control"
-            placeholder="Your Message"
+            placeholder="Votre Message"
             id="floatingTextarea"
             rows={6}
           ></TextArea>
         </div>
 
-        <Button
-          type="submit"
-          className="btn"
-          onClick={(e) => e.preventDefault()}
-        >
+        <Button type="submit" onClick={(e) => e.preventDefault()}>
           SEND REQUEST
         </Button>
       </Form>

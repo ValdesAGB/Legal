@@ -8,31 +8,37 @@ const DivContent = styled.div`
   position: relative;
 `
 
-const DivContentList = styled.div`
+const ListContainer = styled.div`
   position: absolute;
   background-color: white;
   border-radius: 10px;
 
   top: -180px;
-  padding: 20% 0;
+  padding: 50px 0;
 
   @media (min-width: 768px) {
-    top: -150px;
-    padding: 5% 0 5% 2%;
+    top: -110px;
+    padding: 35px 0;
   }
   @media (min-width: 992px) {
-    top: -120px;
-    padding: 5% 0 5% 2%;
+    top: -70px;
   }
 
   @media (min-width: 1200px) {
-    top: -100px;
-    padding: 1% 0 1% 2%;
+    top: -60px;
   }
 `
 
 const List = styled.div`
-  margin: 5% 0;
+  margin-bottom: ${(props) => (props.ids === '4' ? '0' : '40px')};
+  @media (min-width: 768px) {
+    margin-bottom: ${(props) =>
+      props.ids === '4' || props.ids === '3' ? '0' : '40px'};
+  }
+
+  @media (min-width: 992px) {
+    margin-bottom: 0;
+  }
 `
 
 const Count = styled.div`
@@ -40,10 +46,10 @@ const Count = styled.div`
   font-weight: 700;
   font-family: ${police.second};
   line-height: 1;
-  margin-bottom: 12px;
-  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-size: 1.3em;
   @media (min-width: 576px) {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 `
 const Title = styled.div`
@@ -53,7 +59,7 @@ const Title = styled.div`
   line-height: 1;
   font-style: italic;
   text-transform: capitalize;
-  font-size: 0.95em;
+  font-size: 0.85em;
 
   @media (min-width: 768px) {
     font-size: 1em;
@@ -130,22 +136,23 @@ function Counts() {
       <section>
         <DivContent className="container">
           <div className="row justify-content-center">
-            <DivContentList className="row col-11 col-lg-12 ">
+            <ListContainer className="row col-10 col-sm-8 col-md-12">
               {countsElements.map(({ id, icone, title, count }) => (
                 <List
                   key={id}
-                  className="row col-10 col-md-6 col-lg-3 justify-content-center align-items-center"
+                  ids={id}
+                  className="row  col-md-6 col-lg justify-content-center align-items-center"
                 >
-                  <IconeContainer className="col-4 ">
+                  <IconeContainer className="col-4">
                     <Icone className={icone} />
                   </IconeContainer>
-                  <div className="col-8">
+                  <div className="col">
                     <AnimatedValue value={count} />
                     <Title>{title}</Title>
                   </div>
                 </List>
               ))}
-            </DivContentList>
+            </ListContainer>
           </div>
         </DivContent>
       </section>

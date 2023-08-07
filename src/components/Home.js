@@ -12,23 +12,25 @@ const HomeSection = styled.section`
   background-size: cover;
   background-position: center;
 
-  padding-top: 50%;
-  padding-bottom: 80%;
+  padding-top: 35%;
+  padding-bottom: 250px;
 
   @media (min-width: 576px) {
-    padding-top: 40%;
-    padding-bottom: 70%;
+    padding-top: 30%;
+    padding-bottom: 250px;
   }
   @media (min-width: 768px) {
-    padding-top: 20%;
+    padding-top: 250px;
     padding-bottom: 35%;
   }
 
   @media (min-width: 992px) {
-    padding-bottom: 25%;
+    padding-top: 200px;
+    padding-bottom: 200px;
   }
 
   @media (min-width: 1200px) {
+    padding-top: 16%;
     padding-bottom: 15%;
   }
   @media (min-width: 1400px) {
@@ -36,13 +38,21 @@ const HomeSection = styled.section`
   }
 `
 
+const Container = styled.div`
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  @media (max-width: 991px) {
+    padding: 0;
+  }
+`
+
 const Title = styled.h1`
   color: ${color.main};
   font-family: ${police.main};
-  margin-bottom: 20px;
   text-transform: capitalize;
 
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 700;
 
   @media (min-width: 768px) {
@@ -59,72 +69,72 @@ const Title = styled.h1`
 const SubTitle = styled.h3`
   color: ${color.main};
   font-family: ${police.second};
-  margin-bottom: 47px;
-  margin-top: 10px;
-
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-size: 0.9em;
   font-weight: 400;
 
   @media (min-width: 1200px) {
-    font-size: 1.5em;
-    line-height: 1.5;
+    font-size: 1.3em;
+    font-weight: 300;
   }
 `
 
 const Button = styled.button`
   color: ${color.homeBtnColor};
   background-color: transparent;
-  border-color: ${color.homeBtnColor};
   font-family: ${police.second};
-  position: relative;
-  font-size: 14px;
-  font-weight: 700;
+  border: solid 1px ${color.homeBtnColor};
+  font-weight: 800;
   text-transform: uppercase;
   text-align: center;
-  border-radius: 6px;
-  padding: 0;
-  line-height: 53px;
-  width: 210px;
-  height: 53px;
   transition: color 500ms 200ms, background-color 400ms;
   &:hover {
     color: white;
     background-color: ${color.homeBtnColor};
   }
+
+  &:active {
+    color: white !important;
+    background-color: ${color.homeBtnColor} !important;
+    border-color: ${color.homeBtnColor} !important;
+  }
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.8em;
+
+  @media (min-width: 1200px) {
+    padding: 15px 20px;
+    font-size: 0.9em;
+  }
 `
-const DivContent = styled.div`
-  position: relative;
-  z-index: 1;
-  text-align: center;
-`
-const Div = styled.div`
+
+const Hover = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 `
 
 function Home() {
   return (
     <React.Fragment>
-      <HomeSection className="">
-        <DivContent className="row justify-content-center">
-          <div className="col-12 col-md-10 col-xxl-8 row justify-content-center">
-            <Title className=" animate__animated animate__fadeInUp animate__slow">
-              Welcome To Legal Firm
-            </Title>
-            <SubTitle className="col-md-9 col-lg-10 col-xxl-12  animate__animated animate__fadeInUp animate__slow">
-              This should be used to tell a story and let your users know a
-              little more about your service.
-            </SubTitle>
-            <Button className="btn  animate__animated animate__fadeInUp animate__slow">
-              Free consultation
-            </Button>
-          </div>
-        </DivContent>
-        <Div></Div>
+      <HomeSection>
+        <Container className="container">
+          <Title className=" animate__animated animate__fadeInUp animate__slow">
+            Bienvenue au cabinet d'avocats
+          </Title>
+          <SubTitle className="animate__animated animate__fadeInUp animate__slow">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </SubTitle>
+
+          <Button className=" animate__animated animate__fadeInUp animate__slow">
+            Consultation gratuite
+          </Button>
+        </Container>
+        <Hover />
       </HomeSection>
     </React.Fragment>
   )

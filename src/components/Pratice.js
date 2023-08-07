@@ -5,12 +5,18 @@ import { Fade } from 'react-reveal'
 import { police } from '../untils/police'
 import { color } from '../untils/colors'
 
-const separatorClassName = 'col-2 my-3'
+const separatorClassName = 'col-2'
 
 const PraticeSection = styled.section`
-  margin: 100px 0;
+  margin: 100px 0 50px;
   @media (min-width: 1400px) {
     margin: 100px 0;
+  }
+`
+
+const Container = styled.div`
+  @media (max-width: 991px) {
+    padding: 0;
   }
 `
 
@@ -19,8 +25,7 @@ const HeadTitle = styled.h2`
   color: ${color.countNumbersColor};
   font-size: 30px;
   font-weight: 400;
-  line-height: 1;
-  text-transform: capitalize;
+  text-align: center;
   @media (min-width: 768px) {
     font-size: 36px;
   }
@@ -33,16 +38,18 @@ const HeadText = styled.p`
   margin: 25px 0;
   font-size: 14px;
   line-height: 28px;
-
+  text-align: center;
   @media (min-width: 768px) {
     font-size: 1.2em;
-    line-height: 28px;
-    margin-bottom: 5%;
   }
+`
 
-  @media (min-width: 1200px) {
-    margin-bottom: 2%;
-  }
+const PraticeContainer = styled.div`
+  margin-top: 50px;
+`
+
+const Pratices = styled.div`
+  margin-bottom: ${(props) => (props.ids === 'Technology' ? '0' : '50px')};
 `
 
 const Icone = styled.i`
@@ -76,45 +83,46 @@ function Pratice() {
   return (
     <section>
       <PraticeSection>
-        <div className="container p-0">
-          <div>
-            <div className="row justify-content-center">
-              <div className="row col-12 col-lg-8 col-xxl-6 justify-content-center text-center">
-                <Fade bottom>
-                  <HeadTitle>Practice Areas</HeadTitle>
-                </Fade>
-                <Fade bottom>
-                  <HeadText>
+        <Container className="container">
+          <div className="row justify-content-center">
+            <div>
+              <Fade bottom>
+                <HeadTitle>Domaines d'Expertise</HeadTitle>
+              </Fade>
+              <Fade bottom>
+                <div className="row justify-content-center">
+                  <HeadText className="col-md-10 col-lg-8 ">
                     Lorem ipsum dolor amet, consectetur adipisice elite sede
                     eiusmod tempor incidide labeore dolore magna.
                   </HeadText>
-                </Fade>
+                </div>
+              </Fade>
+              <div className="row justify-content-center">
                 {separator(separatorClassName)}
               </div>
-              <div className="row justify-content-md-center">
+              <PraticeContainer className="row justify-content-center">
                 {praticeElements.map(({ id, img, title }) => (
-                  <div
-                    className="row col-12 col-lg-4 my-4 align-items-top"
-                    key={id}
-                  >
-                    <Fade bottom>
-                      <div className="col-2 col-md-1 col-lg-2 me-lg-2">
-                        <Icone className={img} />
-                      </div>
-                      <div className="col">
-                        <Title>{title}</Title>
-                        <Text>
-                          Lorem ipsum dolor sit amet, conse adipise elit, sed
-                          eiusmod tempor incidide.
-                        </Text>
-                      </div>
-                    </Fade>
-                  </div>
+                  <Pratices className="col-12 col-sm-6 col-lg-4" key={id}>
+                    <div className="row">
+                      <Fade bottom>
+                        <div className="col-2">
+                          <Icone className={img} />
+                        </div>
+                        <div className="col">
+                          <Title>{title}</Title>
+                          <Text>
+                            Lorem ipsum dolor sit amet, conse adipise elit, sed
+                            eiusmod tempor incidide.
+                          </Text>
+                        </div>
+                      </Fade>
+                    </div>
+                  </Pratices>
                 ))}
-              </div>
+              </PraticeContainer>
             </div>
           </div>
-        </div>
+        </Container>
       </PraticeSection>
     </section>
   )

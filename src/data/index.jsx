@@ -7,37 +7,37 @@ export const icone = {
 
 export const navElements = [
   {
-    id: 'home',
-    to: '/',
+    id: 'accueil',
+    to: '#',
   },
 
   {
-    id: 'about',
+    id: 'à propos',
     to: '/#about',
   },
 
   {
-    id: 'feature',
+    id: 'services',
     to: '/#feature',
   },
 
   {
-    id: 'team',
+    id: 'équipe',
     to: '/#team',
   },
 
   {
-    id: 'Why Us',
+    id: 'pourquoi nous ?',
     to: '/#why-us',
   },
 
   {
-    id: 'feedback',
+    id: 'avis clients',
     to: '/#feedback',
   },
 
   {
-    id: 'free consultation',
+    id: 'consultation',
     to: '/#free-consultation',
   },
 
@@ -52,28 +52,28 @@ export const countsElements = [
     id: '1',
     icone: 'fa-solid fa-gavel',
     count: '821',
-    title: 'Cases Won',
+    title: 'Cas Réussis',
   },
 
   {
     id: '2',
     icone: 'fa-solid fa-book',
     count: '129',
-    title: 'Skilled Lawyers',
+    title: 'Avocats Qualifiés',
   },
 
   {
     id: '3',
     icone: 'fa-sharp fa-solid fa-scale-balanced',
     count: '2630',
-    title: 'Happy Clients',
+    title: 'Clients Heureux',
   },
 
   {
     id: '4',
     icone: 'fa-solid fa-medal',
     count: '540',
-    title: 'Great Rewards',
+    title: 'Grandes récompenses',
   },
 ]
 
@@ -88,60 +88,60 @@ export const praticeElements = [
   {
     id: 'Criminal',
     img: 'fa-solid fa-handcuffs',
-    title: 'Criminal Law',
+    title: 'Droit criminelle',
   },
 
   {
     id: 'Real',
     img: 'bi bi-bank',
-    title: 'Real Estate Law',
+    title: 'Droit immobilière',
   },
 
   {
     id: 'Family',
     img: 'fa-solid fa-scale-unbalanced-flip',
-    title: 'Family Law',
+    title: 'Droit Familiale',
   },
 
   {
     id: 'International',
     img: 'fa-solid fa-earth-africa',
-    title: 'International Law',
+    title: 'Droit internationale',
   },
 
   {
     id: 'Financial',
     img: 'fa-solid fa-money-bills',
-    title: 'Financial Law',
+    title: 'Droit financière',
   },
 
   {
     id: 'Technology',
     img: 'fa-solid fa-microchip',
-    title: 'Technology Law',
+    title: 'Droit de la technologie',
   },
 ]
 
 export const expertedElements = [
   {
-    id: '100',
+    id: 'Mark',
     cover: 'http://landing.zytheme.com/legal/assets/images/team/team-1.jpg',
     name: 'Mark Smith',
     post: 'CEO & Manager',
   },
 
   {
-    id: '200',
+    id: 'Family',
     cover: 'http://landing.zytheme.com/legal/assets/images/team/team-2.jpg',
     name: 'Ryan Printz',
-    post: 'Family Lawyer',
+    post: 'Avocat des affaires familiales',
   },
 
   {
-    id: '300',
+    id: 'Financial',
     cover: 'http://landing.zytheme.com/legal/assets/images/team/team-3.jpg',
     name: 'Steve Martin',
-    post: 'Financial Lawyer',
+    post: 'Avocat des affaires financières',
   },
 ]
 
@@ -167,27 +167,27 @@ export const Networks = [
 
 export const usElements = [
   {
-    id: '10000',
+    id: 'Exclusively',
     icone: 'fa-solid fa-book-bookmark',
-    title: 'Exclusively Areas',
+    title: 'Zones exclusives',
   },
 
   {
-    id: '20000',
+    id: 'Group',
     icone: 'fa-regular fa-handshake',
-    title: 'Group Of Lawyers',
+    title: "Groupe d'avocats",
   },
 
   {
-    id: '30000',
+    id: 'Cases',
     icone: 'fa-solid fa-shield-halved',
-    title: 'Cases Results',
+    title: 'Cas Réussis',
   },
 
   {
-    id: '40000',
+    id: 'Experts',
     icone: 'fa-solid fa-book-journal-whills',
-    title: 'Experts In Law',
+    title: 'Experts en droit',
   },
 ]
 
@@ -292,21 +292,21 @@ export const blogsPostsElements = [
   {
     id: '1',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/thumb/1.jpg',
-    title: 'Four ways to cheer yourself up on the Blue Monday!',
+    title: 'Quatre façons de se remonter le moral lors du Blue Monday !',
     comments: 6,
   },
 
   {
     id: '2',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/thumb/2.jpg',
-    title: 'Old cameras can capture images better than nowdays camera!',
+    title: "L'incroyable équipe juridique présidentielle grandissante ?",
     comments: 3,
   },
 
   {
     id: '3',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/thumb/3.jpg',
-    title: 'Four ways to cheer yourself up on the Blue Monday!',
+    title: 'Quatre façons de se remonter le moral lors du Blue Monday !',
     comments: 5,
   },
 ]
@@ -315,55 +315,60 @@ export const blogsPagesElements = [
   {
     id: '1',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/1.jpg',
-    title: '10 things to know about tax practice in usa for companies',
+    title:
+      '10 choses à savoir sur la pratique fiscale aux États-Unis pour les entreprises',
   },
 
   {
     id: '2',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/2.jpg',
-    title: 'The incredible growing presidential legal team how to?',
+    title: "L'incroyable équipe juridique présidentielle grandissante ?",
   },
 
   {
     id: '3',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/3.jpg',
-    title: 'So what can law firms do?19 thing you will learn',
+    title:
+      "Alors que peuvent faire les cabinets d'avocats ? 19 choses que vous apprendrez",
   },
 
   {
     id: '4',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/4.jpg',
-    title: '3 things law firms must understand to increase gender diversity',
+    title:
+      "3 choses que les cabinets d'avocats doivent comprendre pour accroître la diversité des genres",
   },
 
   {
     id: '5',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/5.jpg',
-    title: '10 things to know about entertainment law',
+    title: '10 choses à savoir sur le droit du divertissement',
   },
 
   {
     id: '6',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/6.jpg',
-    title: 'What stops lawyers from using Macs at work?',
+    title: "Qu'est-ce qui empêche les avocats d'utiliser des Mac au travail ?",
   },
 
   {
     id: '7',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/7.jpg',
-    title: 'An important footnote in the history of legal education',
+    title:
+      "Une note de bas de page importante dans l'histoire de la formation juridique",
   },
 
   {
     id: '8',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/8.jpg',
-    title: 'Lawyers as leaders: is your personality too legal?',
+    title:
+      'Avocats en tant que leaders : votre personnalité est-elle trop légale ?',
   },
 
   {
     id: '9',
     cover: 'http://landing.zytheme.com/legal/assets/images/blog/standard/9.jpg',
-    title: 'Never fire a potential key witness before trial',
+    title: 'Ne renvoyez jamais un témoin clé potentiel avant le procès',
   },
 ]
 

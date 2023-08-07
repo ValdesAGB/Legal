@@ -6,18 +6,14 @@ import { color } from '../../untils/colors'
 const Section = styled.section`
   text-align: center;
   background-color: ${color.notFoundBgColor};
-  padding: 60% 0;
-
-  @media (min-width: 576px) {
-    padding: 30% 0;
-  }
+  padding: 150px 0;
 
   @media (min-width: 768px) {
-    padding: 26% 0;
+    padding: 180px 0;
   }
 
   @media (min-width: 1200px) {
-    padding: 18% 0;
+    padding: 250px 0;
   }
 
   h1 {

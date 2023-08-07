@@ -6,7 +6,7 @@ import { Fade } from 'react-reveal'
 import { police } from '../untils/police'
 import { color } from '../untils/colors'
 
-const separatorClassName = 'col-3 mt-3 mt-md-0 col-md-2'
+const separatorClassName = 'col-3'
 const bgCover =
   'http://landing.zytheme.com/legal/assets/images/background/bg-1.jpg'
 
@@ -36,10 +36,6 @@ const HeadTitle = styled.p`
   color: ${color.countNumbersColor};
   font-size: 30px;
   font-weight: 400;
-  line-height: 1;
-  margin-bottom: 10px;
-  text-transform: capitalize;
-  padding: 0;
   @media (min-width: 768px) {
     font-size: 36px;
   }
@@ -49,18 +45,11 @@ const HeadText = styled.p`
   font-family: ${police.second};
   font-weight: 400;
   color: ${color.aboutTextColor};
-  margin: 25px 0;
+  margin: 5px 0 25px;
   font-size: 14px;
   line-height: 28px;
-
   @media (min-width: 768px) {
     font-size: 1.2em;
-    line-height: 28px;
-    margin-bottom: 5%;
-  }
-
-  @media (min-width: 1200px) {
-    margin-bottom: 2%;
   }
 `
 
@@ -105,39 +94,41 @@ function Us() {
   return (
     <section>
       <div className="row" id="why-us">
-        <CoverContainer className="col-sm-12 col-lg-5">
+        <CoverContainer className="col-lg-5 col-xxl-6">
           <Cover />
         </CoverContainer>
-        <ContentDiv className="col-sm-12 col-lg-7 row justify-content-center">
-          <div className="col-12 col-md-9 col-lg-11">
-            <Fade bottom>
-              <HeadTitle>Why Hire Us ?</HeadTitle>
-            </Fade>
-            <Fade bottom>
-              <HeadText>
-                Lorem ipsum dolor amet, consectetur adipisice elite sede eiusmod
-                tempor incidide labeore dolore magna.
-              </HeadText>
-            </Fade>
-            {separator(separatorClassName)}
-            <List className="row">
-              {usElements.map(({ id, icone, title }) => (
-                <ListItemsDiv className="col-12 col-md-6" key={id}>
-                  <Fade bottom>
-                    <div className="mb-4">
-                      <Icone className={icone} />
-                    </div>
-                    <div>
-                      <Title>{title}</Title>
-                      <Text>
-                        Lorem ipsum dolor sit amet, conse adipise elit, sed
-                        eiusmod tempor incidide.
-                      </Text>
-                    </div>
-                  </Fade>
-                </ListItemsDiv>
-              ))}
-            </List>
+        <ContentDiv className="col-lg-7 col-xxl-6">
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-9 col-lg-11">
+              <Fade bottom>
+                <HeadTitle>Pourquoi nous ?</HeadTitle>
+              </Fade>
+              <Fade bottom>
+                <HeadText>
+                  Lorem ipsum dolor amet, consectetur adipisice elite sede
+                  eiusmod tempor incidide labeore dolore magna.
+                </HeadText>
+              </Fade>
+              {separator(separatorClassName)}
+              <List className="row">
+                {usElements.map(({ id, icone, title }) => (
+                  <ListItemsDiv className="col-12 col-sm-6" key={id}>
+                    <Fade bottom>
+                      <div className="mb-4">
+                        <Icone className={icone} />
+                      </div>
+                      <div>
+                        <Title>{title}</Title>
+                        <Text>
+                          Lorem ipsum dolor sit amet, conse adipise elit, sed
+                          eiusmod tempor incidide.
+                        </Text>
+                      </div>
+                    </Fade>
+                  </ListItemsDiv>
+                ))}
+              </List>
+            </div>
           </div>
         </ContentDiv>
       </div>

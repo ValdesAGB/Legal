@@ -5,14 +5,13 @@ import { Fade } from 'react-reveal'
 import { color } from '../untils/colors'
 import { police } from '../untils/police'
 
-const separatorClassName = 'col-2 mb-5'
+const separatorClassName = 'col-2'
 
-const Container = styled.section`
-  padding: 30% 0;
-  margin: 0;
+const ExpertedSection = styled.section`
   background-color: ${color.aboutBgColor};
-  @media (min-width: 768px) {
-    padding: 10% 0;
+  padding: 100px 0 50px;
+  @media (min-width: 1200px) {
+    padding: 100px 0;
   }
 `
 
@@ -21,8 +20,7 @@ const HeadTitle = styled.h1`
   color: ${color.countNumbersColor};
   font-size: 30px;
   font-weight: 400;
-  line-height: 1;
-  text-transform: capitalize;
+  text-align: center;
   @media (min-width: 768px) {
     font-size: 36px;
   }
@@ -32,35 +30,30 @@ const HeadText = styled.p`
   font-family: ${police.second};
   font-weight: 400;
   color: ${color.aboutTextColor};
-  line-height: 1.5em;
   margin: 25px 0;
   font-size: 14px;
   line-height: 28px;
-
+  text-align: center;
   @media (min-width: 768px) {
     font-size: 1.2em;
-    line-height: 28px;
-    margin-bottom: 5%;
-  }
-
-  @media (min-width: 1200px) {
-    margin-bottom: 2%;
   }
 `
 
+const ExpertedContainer = styled.div`
+  margin-top: 50px;
+`
+
 const TeamContainer = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: ${(props) => (props.ids === 'Financial' ? '0' : '3rem')};
   @media (min-width: 768px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-top: 0;
+    margin-bottom: 0;
   }
 `
 
 const CoverContainer = styled.div`
   position: relative;
   cursor: pointer;
-  margin-bottom: 3rem;
+  margin-bottom: 20px;
   img {
     width: 100%;
   }
@@ -139,54 +132,54 @@ const Name = styled.h6`
 
 function Experted() {
   return (
-    <section>
-      <div className="row " id="team">
-        <Container>
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-12 col-lg-7 row justify-content-center text-center">
-                <Fade bottom>
-                  <HeadTitle>Experted Attorneys</HeadTitle>
-                </Fade>
-                <Fade bottom>
-                  <HeadText>
-                    Lorem ipsum dolor amet, consectetur adipisice elite sede
-                    eiusmod tempor incidide labeore dolore magna.
-                  </HeadText>
-                </Fade>
-                {separator(separatorClassName)}
+    <ExpertedSection id="team">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div>
+            <Fade bottom>
+              <HeadTitle>Experted Attorneys</HeadTitle>
+            </Fade>
+            <Fade bottom>
+              <div className="row justify-content-center">
+                <HeadText className="col-md-10 col-lg-8 ">
+                  Lorem ipsum dolor amet, consectetur adipisice elite sede
+                  eiusmod tempor incidide labeore dolore magna.
+                </HeadText>
               </div>
-              <div className="row ">
-                {expertedElements.map(({ id, cover, name, post }) => (
-                  <TeamContainer className="col-12 col-sm-6 col-lg" key={id}>
-                    <Fade bottom>
-                      <CoverContainer>
-                        <img src={cover} alt={id} />
-                        <HoverImage>
-                          <List>
-                            {Networks.map(({ id, icone }) => (
-                              <ListItems key={id}>
-                                <a href="#">
-                                  <Icone className={icone} />
-                                </a>
-                              </ListItems>
-                            ))}
-                          </List>
-                        </HoverImage>
-                      </CoverContainer>
-                      <Identification>
-                        <Name>{name}</Name>
-                        <Post>{post}</Post>
-                      </Identification>
-                    </Fade>
-                  </TeamContainer>
-                ))}
-              </div>
+            </Fade>
+            <div className="row justify-content-center text-center">
+              {separator(separatorClassName)}
             </div>
           </div>
-        </Container>
+          <ExpertedContainer className="row justify-content-center">
+            {expertedElements.map(({ id, cover, name, post }) => (
+              <TeamContainer className="col-12 col-sm-6 col-lg" key={id}>
+                <Fade bottom>
+                  <CoverContainer>
+                    <img src={cover} alt={id} />
+                    <HoverImage>
+                      <List>
+                        {Networks.map(({ id, icone }) => (
+                          <ListItems key={id}>
+                            <a href="#">
+                              <Icone className={icone} />
+                            </a>
+                          </ListItems>
+                        ))}
+                      </List>
+                    </HoverImage>
+                  </CoverContainer>
+                  <Identification>
+                    <Name>{name}</Name>
+                    <Post>{post}</Post>
+                  </Identification>
+                </Fade>
+              </TeamContainer>
+            ))}
+          </ExpertedContainer>
+        </div>
       </div>
-    </section>
+    </ExpertedSection>
   )
 }
 
