@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Legal.git/static/css/main.ea13074d.css",
-    "main.js": "/Legal.git/static/js/main.b1941b95.js",
-    "static/media/slick.svg": "/Legal.git/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/Legal.git/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/Legal.git/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "index.html": "/Legal.git/index.html",
-    "static/media/slick.woff": "/Legal.git/static/media/slick.295183786cd8a1389865.woff",
-    "main.ea13074d.css.map": "/Legal.git/static/css/main.ea13074d.css.map",
-    "main.b1941b95.js.map": "/Legal.git/static/js/main.b1941b95.js.map"
+    "main.css": "/Legal/static/css/main.238912e5.css",
+    "main.js": "/Legal/static/js/main.f7d086f4.js",
+    "static/media/slick.svg": "/Legal/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Legal/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Legal/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "index.html": "/Legal/index.html",
+    "static/media/slick.woff": "/Legal/static/media/slick.295183786cd8a1389865.woff",
+    "main.238912e5.css.map": "/Legal/static/css/main.238912e5.css.map",
+    "main.f7d086f4.js.map": "/Legal/static/js/main.f7d086f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea13074d.css",
-    "static/js/main.b1941b95.js"
+    "static/css/main.238912e5.css",
+    "static/js/main.f7d086f4.js"
   ]
 }
